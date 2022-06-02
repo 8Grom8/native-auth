@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import { TextInput } from 'react-native';
-import tw from "tailwind-rn";
+import tw from "tailwind-react-native-classnames";
 
 interface IField {
     onChange: (val: string) => void
@@ -18,7 +18,7 @@ const Field:FC<IField>= ({onChange,val,placeholder,isSecure }) => {
         value={val}
         secureTextEntry={isSecure} 
         autoCapitalize='none'
-        style={tw('rounded-xl bg-gray-100 mt-3 p-3 w-full')}
+        style={[tw`rounded-xl bg-gray-100 mt-3 p-3 w-full`]}
         />
     );
 }

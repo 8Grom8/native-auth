@@ -1,14 +1,14 @@
 import React, {FC} from 'react';
 import { View, ScrollView } from 'react-native';
-import tw from "tailwind-rn";
+import tw from "tailwind-react-native-classnames";
 
 interface ILayout {
     isScrollView?: boolean
 }
 
-export const styleCenter = tw("h-full w-full bg-white pt-16");
+export const styleCenter = tw`'h-full w-full bg-white pt-16'`
 
-const LayOut: FC<ILayout> = ({children, isScrollView = true}) => {
+const Layout: FC<ILayout> = ({children, isScrollView = true}) => {
     return (
         <View style={styleCenter}>
             {isScrollView ? <ScrollView>{children}</ScrollView> : children}
@@ -17,4 +17,4 @@ const LayOut: FC<ILayout> = ({children, isScrollView = true}) => {
     );
 }
 
-export default LayOut;
+export default Layout;

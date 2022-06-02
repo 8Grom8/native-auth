@@ -18,7 +18,7 @@ export const useUpdateProfile = (name:string, docId:string) => {
             const docRef = doc(db, 'users', docId)
             await updateDoc(docRef,{displayName: name})
             setIsSuccess(true)
-            setTimeout(() => {setIsLoading(false)},3000)
+            setTimeout(() => {setIsLoading(false)}, 3000)
         } catch (error:any) {
             Alert.alert('Error update profile', error.message)
         }finally{

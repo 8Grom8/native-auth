@@ -1,14 +1,14 @@
 import React, {FC} from 'react';
 import {Text} from 'react-native';
-import LayOut from '../../layOut/LayOut';
+import Layout from '../../layout/Layout';
 import Header from './Header';
 
 const Home: FC = () => {
     return (
-        <LayOut>
+        <Layout>
             <Header/>
             <Text>Home</Text>
-        </LayOut>
+        </Layout>
     );
 }
 

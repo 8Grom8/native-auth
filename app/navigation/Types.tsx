@@ -1,5 +1,6 @@
-export type typeRootStackParamList = {
-    Auth:undefined,
-    Home: undefined,
-    Profile:undefined,
-}
+export type RootStackParamList = {
+  Auth: undefined;
+  Home: undefined;
+  Profile: undefined;
+};
+    

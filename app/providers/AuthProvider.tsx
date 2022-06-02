@@ -4,7 +4,7 @@ import { auth, login, db, register, logout} from '../firebase';
 import {Alert} from 'react-native';
 import {addDoc, collection} from "@firebase/firestore";
 
-interface Icontext{
+interface IContext{
     user: User | null
     isLoading: boolean;
     register: (email: string, password: string) => Promise<void>
@@ -12,7 +12,7 @@ interface Icontext{
     logout: () => Promise<void>
 }
 
-export const AuthContext = createContext<Icontext>({} as Icontext)
+export const AuthContext = createContext<IContext>({} as IContext)
 
 export const AuthProvider: FC = ({children}) => {
     const [user, setUser] = useState<User | null>(null)
@@ -44,12 +44,12 @@ export const AuthProvider: FC = ({children}) => {
         }
     }
 
-    const logOutHandler = async() =>{
+    const logoutHandler = async() =>{
         setIsLoading(true)
         try {
             await logout()
         } catch (error:any) {
-            Alert.alert("Error logOut.", error)
+            Alert.alert("Error logout.", error)
         }finally{
             setIsLoading(false)
         }
@@ -61,7 +61,7 @@ useEffect(() => onAuthStateChanged(auth,user => {
 }),[])
 
     const value = useMemo(() => ({
-user, isLoading, login: loginHandler, logout: logOutHandler, register: registerHandler
+user, isLoading, login: loginHandler, logout: logoutHandler, register: registerHandler
 }),[user, isLoading])
     return (
         <AuthContext.Provider value={value}>

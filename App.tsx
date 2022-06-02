@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navigation } from 'react-native-navigation';
+import Navigation from './app/navigation/Navigation';
 import { AuthProvider } from './app/providers/AuthProvider';
 
 export default function App() {

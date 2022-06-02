@@ -1,7 +1,7 @@
-import { typeRootStackParamList } from "./app/navigation/Types";
+import { RootStackParamList } from "./app/navigation/types";
 
 declare global {
     namespace ReactNavigation {
-        interface RootParamsList extends TypeRootStackParamList{}
+        interface RootParamsList extends RootStackParamList {}
     }
 }
